@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming soon</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/coming_soon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="#">
+            <i class='bx bx-movie'></i> Movies </a>
+        <div class="bx bx-menu" id="menu-icon">
+
+        </div>
+        <ul class="navbar">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="index.html">NEWS</a></li>
+            <li><a href="#">REVIEW</a></li>
+            <li><a href="#" style="color: red;">COMING SOON</a></li>
+            <li><a href="index-contactUs.htm">CONTACT US</a></li>
+        </ul>
+        <a class="btn" href="login.html">Login</a>
+    </header>
+    <div class="swiper-wrapper ">
+        <div class="container">
+            <img src="./css/images/bbb.jpg" alt="">
+            <div class="home-text">
+                <span>ANT-MAN</span>
+                <h1>ANT-MAN AND THE WASP:<br>QUANTUMANIA</h1>
+                <p id="countdown" class="countdown"></p>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+        <!-- link custom -->
+
+        <script src="main.js"></script>
+
+        <script>
+            var countDownDate = new Date("Jul 7, 2023 18:00:00").getTime();
+
+            var x = setInterval(function () {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
+</body>
+
+</html>
