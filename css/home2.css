@@ -192,31 +192,31 @@ img {
 }
 
 .home-text span {
-    color: var(--main-color);
-    font-weight: 700;
+    color: var(--bg-color);
+    font-weight: 500;
     text-transform: uppercase;
 }
 
 .home-text h1 {
     color: var(--bg-color);
-    /* font-size: 60px; */
+    font-size: 90px;
     font-weight: 700;
     margin-bottom: 10px;
-    line-height: 100px;
-    font-size: 100px;
-    color: transparent;
-    -webkit-text-stroke: 1px #fff;
-    background: url(./images2/back.png);
-    -webkit-background-clip: text;
-    background-position: 0 0;
-    animation: back 15s linear infinite;
+    font-family: "poppins", sans-serif;
 }
 
-@keyframes back {
-    100% {
-        background-position: 2000px 0;
-    }
+.countdown {
+    padding-left: 100px;
+    padding-right: 100px;
+    border: solid thick white;
+    border-radius: 20px;
+    background-color: rgb(69, 69, 69);
+    opacity: 0.8;
+    margin-top: 20px;
+    font-size: 150px;
+    font-weight: bolder;
 }
+
 
 .play {
     position: absolute;

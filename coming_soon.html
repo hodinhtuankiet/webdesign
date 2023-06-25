@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming soon</title>
+    <title>Home</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./css/coming_soon.css">
+    <link rel="stylesheet" href="./css/home2.css">
+    <link rel="stylesheet" href="/css/style-contactUs.css" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
@@ -19,50 +21,68 @@
 
         </div>
         <ul class="navbar">
-            <li><a href="home.html">HOME</a></li>
-            <li><a href="index.html">NEWS</a></li>
-            <li><a href="#">REVIEW</a></li>
-            <li><a href="#" style="color: red;">COMING SOON</a></li>
-            <li><a href="index-contactUs.htm">CONTACT US</a></li>
+            <li><a href="./home.html">HOME</a></li>
+            <li><a href="./index.html">NEWS</a></li>
+            <li><a href="#" class="home-active">REVIEW</a></li>
+            <li><a href="./coming_soon.html" style="color: red;">COMING SOON</a></li>
+            <li><a href="./index-contactUs.htm">CONTACT US</a></li>
         </ul>
         <a class="btn" href="login.html">Login</a>
+
     </header>
-    <div class="swiper-wrapper ">
-        <div class="container">
-            <img src="./css/images/bbb.jpg" alt="">
-            <div class="home-text">
-                <span>ANT-MAN</span>
-                <h1>ANT-MAN AND THE WASP:<br>QUANTUMANIA</h1>
-                <p id="countdown" class="countdown"></p>
+    <section class="home swiper" id="home">
+        <div class="swiper-wrapper ">
+            <div class="swiper-slide container">
+                <img src="./img/v.jpg" alt="">
+                <div class="home-text">
+                    <!-- <span>Oppenheimer</span> -->
+                    <h1>OPPENHEIMER</h1>
+                    <p id="countdown" class="countdown"></p>
+                    <div class="container-button">
+                        <div class="hover bt-1"></div>
+                        <div class="hover bt-2"></div>
+                        <div class="hover bt-3"></div>
+                        <div class="hover bt-4"></div>
+                        <div class="hover bt-5"></div>
+                        <div class="hover bt-6"></div>
+                        <button></button>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="swiper-pagination" style="bottom: var(--swiper-pagination-bottom,40px);"></div>
+    </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-        <!-- link custom -->
+    <!-- link custom -->
 
-        <script src="main.js"></script>
+    <script src="./js/home.js"></script>
 
-        <script>
-            var countDownDate = new Date("Jul 7, 2023 18:00:00").getTime();
+    <!-- countdown script -->
 
-            var x = setInterval(function () {
-                var now = new Date().getTime();
-                var distance = countDownDate - now;
+    <script>
+        var countDownDate = new Date("Jul 21, 2023 18:00:00").getTime();
 
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
 
-                document.getElementById("countdown").innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("demo").innerHTML = "EXPIRED";
-                }
-            }, 1000);
-        </script>
+            document.getElementById("countdown").innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 </body>
 
 </html>
