@@ -7,15 +7,157 @@
   font-family: "Poppins", sans-serif;
 }
 
+:root {
+  --main-color: #ff2c1f;
+  --text-color: #020307;
+  --bg-color: #fff;
+
+}
+
 body {
-  background: linear-gradient(90deg,
-      #0e3959 0%,
-      #0e3959 30%,
-      #03a9f5 30%,
-      #03a9f5 100%);
+  /* background: var(--text-color); */
+  color: var(--bg-color);
+  background: url(../css/images/cinema.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 100px;
+  transition: .5s;
+  background: transparent;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo .bx {
+  font-size: 24px;
+  color: var(--bg-color);
+
+}
+
+.navbar {
+  display: flex;
+  column-gap: 4rem;
+  list-style: none;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bg-color);
+  text-decoration: none;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgb(255, 0, 0);
+  border-radius: 5px;
+  bottom: -6px;
+  transform: translateY(10px);
+  transition: .5s;
+  opacity: 0;
+}
+
+.navbar a:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.home-active {
+  color: #ff2c1f;
+}
+
+.navbar a:hover::after,
+.navbar .home-active::after {
+  width: 100%;
+}
+
+#menu-icon {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 1001;
+
+}
+
+.btn {
+  padding: 0.7em 1.5em;
+  background: none;
+  border: 2px solid #fff;
+  font-size: 15px;
+  color: #131313;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border-radius: 12px;
+  background-color: red;
+  font-weight: bolder;
+  box-shadow: 0 2px 0 2px #000;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 120%;
+  background-color: #ff6700;
+  top: 50%;
+  transform: skewX(30deg) translate(-150%, -50%);
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: #4cc9f0;
+  color: #fff;
+  box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+.btn:hover::before {
+  transform: skewX(30deg) translate(150%, -50%);
+  transition-delay: 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.btn_login {
+  padding: 10px 20px;
+  color: #fff;
+  background: red;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid transparent;
 }
 
 .contactUs {
+  margin-top: 100px;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -30,8 +172,8 @@ body {
 }
 
 .contactUs .title h2 {
-  color: #fff;
-  font-weight: 500;
+  color: var(--main-color);
+  font-weight: bold;
 }
 
 .form {
@@ -139,6 +281,7 @@ body {
 /* info */
 .info {
   background: #0e3959;
+  padding: 20px;
 }
 
 .info h3 {
@@ -207,7 +350,49 @@ body {
 /* Responsive Design */
 @media (max-width: 991px) {
   body {
-    background: #03a9f5;
+    background: var(--text-color);
+  }
+
+  header {
+    padding: 12px 4%;
+  }
+
+  #menu-icon {
+    display: initial;
+    color: var(--bg-color);
+  }
+
+  .navbar {
+    position: absolute;
+    top: -576px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color);
+    row-gap: 1.4rem;
+    box-shadow: 4px 4px 0px 4px rgb(14 55 54 / 15%);
+    transition: 0.2s all linear;
+    text-align: center;
+    font-weight: 400;
+    list-style: none;
+  }
+
+  .navbar a {
+    color: var(--text-color);
+  }
+
+  .navbar a:hover {
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+  }
+
+  .navbar a::after {
+    display: none;
+  }
+
+  .navbar.active {
+    top: 100%;
   }
 
   .contactUs {

@@ -207,13 +207,13 @@ img {
 
 .countdown {
     padding-left: 100px;
-    padding-right: 100px;
+    padding-right: 50px;
     border: solid thick white;
     border-radius: 20px;
     background-color: rgb(69, 69, 69);
     opacity: 0.8;
     margin-top: 20px;
-    font-size: 150px;
+    font-size: 100px;
     font-weight: bolder;
 }
 
@@ -417,6 +417,12 @@ button::after {
         column-gap: 3rem;
     }
 
+    .countdown {
+        font-size: 80px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
     header {
         padding: 18px 4%;
     }
@@ -430,6 +436,10 @@ button::after {
     .navbar {
         display: flex;
         column-gap: 3rem;
+    }
+
+    .countdown {
+        font-size: 70px;
     }
 
     section {
@@ -450,10 +460,11 @@ button::after {
         padding: 12px 4%;
     }
 
-    #menu-icon {
-        display: initial;
-        color: var(--bg-color);
+    .countdown {
+        font-size: 65px;
+        padding-left: 30px;
     }
+
 
     .navbar {
         position: absolute;
@@ -517,6 +528,12 @@ button::after {
         font-size: 2.5rem;
     }
 
+    .countdown {
+        font-size: 60px;
+        padding-left: 30px;
+        padding-right: 10px;
+    }
+
     img {
         /* width: 100%; */
         width: 100%;
@@ -541,11 +558,24 @@ button::after {
     }
 }
 
+@media(max-width: 450px) {
+    .countdown {
+        font-size: 50px;
+        padding-right: 10px;
+        padding-left: 0px;
+    }
+}
+
 @media(max-width: 376px) {
     .play {
         /* position: absolute; */
         right: 5rem;
         bottom: 10%;
+    }
+
+    .countdown {
+        font-size: 45px;
+        padding-right: 0px;
     }
 
     .play .bx {

@@ -48,6 +48,10 @@ body {
   color: white;
 }
 
+.menu-list a.active {
+  color: black;
+}
+
 .menu-list-item {
   margin-right: 30px;
 }
@@ -281,6 +285,13 @@ body {
   background-color: black;
 }
 
+#menu-icon {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
 .toggle-ball.active {
   background-color: white;
   transform: translateX(-20px);
@@ -289,5 +300,47 @@ body {
 @media only screen and (max-width: 940px) {
   .menu-container {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .featured-desc {
+    width: 350px;
+
+  }
+
+  .menu-container {
+    position: absolute;
+    top: -576px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color);
+    row-gap: 1.4rem;
+    box-shadow: 4px 4px 0px 4px rgb(14 55 54 / 15%);
+    transition: 0.2s all linear;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .movie-list-title {
+    font-size: 25px;
+  }
+
+
+  .arrow {
+    font-size: 100px;
+  }
+
+  .movie-list-item-img {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .featured-desc {
+    width: 300px;
   }
 }
