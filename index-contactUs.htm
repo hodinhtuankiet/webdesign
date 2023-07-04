@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style-contactUs.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
   <title>Contact Us</title>
 </head>
 
@@ -25,10 +27,10 @@
     </ul>
     <a class="btn" href="login.html">Login</a>
 
-  </header>
+  </header>̀
   <div class="contactUs">
     <div class="title">
-      <h2>Contact Us</h2>
+      <h2>CONTACT US</h2>
     </div>
     <div class="box">
       <!-- Form -->
@@ -50,25 +52,25 @@
             <div class="row50">
               <div class="inputBox">
                 <span>Email</span>
-                <input type="text" placeholder="nguyenanh@gmail.com" />
+                <input id="name_customer" type="text" placeholder="nguyenanh@gmail.com" />
               </div>
               <div class="inputBox">
                 <span>Mobile</span>
-                <input type="text" placeholder="037938572" />
+                <input id="phone_customer" type="text" placeholder="037938572" />
               </div>
             </div>
 
             <div class="row100">
               <div class="inputBox">
                 <span>Message</span>
-                <textarea placeholder="write your message .."></textarea>
+                <textarea id="message_customer" placeholder="write your message .."></textarea>
               </div>
             </div>
 
             <div class="row100">
               <div class="inputBox">
                 <span></span>
-                <input type="submit" value="Send" />
+                <input id="button__send" type="submit" value="Send" />
               </div>
             </div>
           </div>
@@ -85,7 +87,7 @@
           </div>
           <div>
             <span><ion-icon name="mail"></ion-icon></span>
-            <a href="mailto:gotln.22ite@vku.udn.vn">gotln.22ite@vku.udn.vn</a>
+            <a href="mailto:gotln.22ite@vku.udn.vn">mywebsie_reviewfilm@vku.udn.vn</a>
           </div>
           <div>
             <span><ion-icon name="phone-portrait"></ion-icon></span>
@@ -111,6 +113,29 @@
   </div>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"> </script>
+  <script src="./js/home.js">
+  </script>
+  <script>
+    var btn = document.getElementById("button__send");
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log("hii");
+      var name_customer = document.getElementById("name_customer").value;
+      var email_customer = document.getElementById("phone_customer").value;
+      var message_customer = document.getElementById("message_customer").value;
+      var body = "Email: " + name_customer + "<br /> Email:" + email_customer + "<br /> Message: " + message_customer;
+      Email.send({
+        SecureToken: "df3a101f-3345-425a-b2d7-8c79a1523065",
+        To: 'hodinhtuankiet@gmail.com',
+        From: "kiethdt.22ite@vku.udn.vn",
+        Subject: "Contact Of Customer",
+        Body: body
+      }).then(
+        message => alert("Thanks you for feedback")
+      );
+    })
+  </script>
 </body>
 
 </html>

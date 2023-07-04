@@ -202,7 +202,7 @@ img {
     font-size: 90px;
     font-weight: 700;
     margin-bottom: 10px;
-    font-family: "poppins", sans-serif;
+    font-family: auto;
 }
 
 .countdown {
